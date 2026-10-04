@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leftover Food Donation System</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f8f5;
+  color:#243024;
+}
+header{
+  background:#197a4b;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+header h1{margin:0 0 8px}
+nav{
+  background:#125b38;
+  padding:13px;
+  text-align:center;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
+  font-weight:bold;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+.card{
+  background:white;
+  padding:22px;
+  margin-bottom:18px;
+  border-radius:14px;
+  box-shadow:0 3px 12px #0002;
+}
+.hero{text-align:center}
+h2,h3{color:#197a4b}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+input,select,textarea{
+  width:100%;
+  padding:11px;
+  margin:6px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+textarea{height:90px}
+button{
+  background:#197a4b;
+  color:white;
+  border:0;
+  padding:12px 18px;
+  border-radius:8px;
+  cursor:pointer;
+}
+#msg{
+  display:none;
+  background:#e2f5e9;
+  padding:12px;
+  margin-top:12px;
+  border-radius:8px;
+}
+footer{
+  background:#125b38;
+  color:white;
+  text-align:center;
+  padding:18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Leftover Food Donation System</h1>
+<p>Share surplus food and help people in need.</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#how">How It Works</a>
+<a href="#donate">Donate Food</a>
+<a href="#volunteer">Volunteer</a>
+</nav>
+
+<div class="container">
+
+<section id="home" class="card hero">
+<h2>Reduce Food Waste • Help Others</h2>
+<p>A simple platform connecting food donors, NGOs and volunteers.</p>
+<a href="#donate">
+<button>Donate Food</button>
+</a>
+</section>
+
+<section id="how" class="card">
+<h2>How It Works</h2>
+
+<div class="grid">
+<div>
+<h3>1. Donor</h3>
+<p>Enter food details, quantity and pickup information.</p>
+</div>
+
+<div>
+<h3>2. NGO</h3>
+<p>NGO can view available food and request it.</p>
+</div>
+
+<div>
+<h3>3. Volunteer</h3>
+<p>Volunteer helps with collection and delivery.</p>
+</div>
+
+<div>
+<h3>4. Completed</h3>
+<p>Food is collected and delivered to people in need.</p>
+</div>
+</div>
+</section>
+
+<section id="donate" class="card">
+<h2>Food Donation Form</h2>
+
+<form onsubmit="submitForm(event)">
+
+<input type="text" placeholder="Donor Name" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<input type="text" placeholder="Food Name" required>
+
+<select required>
+<option value="">Select Food Type</option>
+<option>Vegetarian</option>
+<option>Non-Vegetarian</option>
+</select>
+
+<input type="text" placeholder="Quantity" required>
+
+<input type="date" required>
+
+<input type="time" required>
+
+<textarea placeholder="Pickup Address" required></textarea>
+
+<button type="submit">Submit Donation</button>
+
+</form>
+
+<p id="msg">
+Donation submitted successfully! Status: Pending.
+</p>
+
+</section>
+
+<section id="volunteer" class="card">
+
+<h2>Volunteer / NGO</h2>
+
+<p>
+Volunteers can help collect and deliver food.
+NGOs can request suitable food donations and update the request status.
+</p>
+
+<div class="grid">
+
+<div>
+<h3>Pending</h3>
+<p>Request is waiting for action.</p>
+</div>
+
+<div>
+<h3>Accepted</h3>
+<p>NGO has accepted the request.</p>
+</div>
+
+<div>
+<h3>Collected</h3>
+<p>Food has been collected.</p>
+</div>
+
+<div>
+<h3>Completed</h3>
+<p>Food delivery is completed.</p>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Leftover Food Donation System</p>
+</footer>
+
+<script>
+function submitForm(event){
+event.preventDefault();
+document.getElementById("msg").style.display="block";
+event.target.reset();
+}
+</script>
+
+</body>
+  </html>
